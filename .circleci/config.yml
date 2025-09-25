@@ -1,14 +1,15 @@
 version: 2.1
 
 jobs:
-  hello-world:
+  build:
     docker:
-      - image: cimg/base:stable 
+      - image: cimg/node:18.17  # Node.js official CircleCI image
     steps:
-      - checkout                # Pulls your repo
-      - run: echo "Hello, CircleCI!" 
+      - checkout
+      - run: npm install
+      - run: npm test
 
 workflows:
-  build:
+  build_and_test:
     jobs:
-      - hello-world
+      - build
