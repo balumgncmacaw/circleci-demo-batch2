@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   hello-world:
     docker:
-      - image: cimg/base:latest
+      - image: cimg/base:stable 
     steps:
       - checkout                # Pulls your repo
       - run: echo "Hello, CircleCI!" 
