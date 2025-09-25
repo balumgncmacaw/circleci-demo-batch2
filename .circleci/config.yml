@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  hello-world:
+    docker:
+      - image: cimg/base:2025.09
+    steps:
+      - checkout                # Pulls your repo
+      - run: echo "Hello, CircleCI!" 
+
+workflows:
+  build:
+    jobs:
+      - hello-world
